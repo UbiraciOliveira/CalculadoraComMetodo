@@ -1,35 +1,33 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Calculadora.Engine
+﻿namespace Calculadora.Engine
 {
-    internal class Calculos
+    public static class Calculos
     {
-       // Método de Somar
-       public static double Somar(double a, double b)
+        public static double Somar(double a, double b)
         {
-            return a + b; // O Return devolve o resultado para quem o chamou
+            return a + b;
         }
 
-        // Método de Subtrair
+        // 1. Método de Subtrair
         public static double Subtrair(double a, double b)
         {
             return a - b;
         }
 
-        // Método de Multiplicar
+        // 2. Método de Multiplicar
         public static double Multiplicar(double a, double b)
         {
             return a * b;
         }
 
-        // Método de Dividi
-        public static double Dividi(double a, double b) 
-        { 
-            return a / b; 
+        // 3. Método de Dividir com uma proteção simples contra erro
+        public static double Dividir(double a, double b)
+        {
+            if (b == 0)
+            {
+                Console.WriteLine("Erro: Não é possível dividir por zero!");
+                return 0;
+            }
+            return a / b;
         }
     }
 }
